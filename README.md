@@ -4,6 +4,16 @@ Set up to run on linux. Tested on Linux Mint.
 Requires:
  * minichlink: install ch32v003fun, then change path in RVPC Makefile to suit
  * riscv64-unknown-elf-??? : cross assembler toolkit
+ * ghex: hex editor to at least look at binary dumps
+
+To build, burn into RVPC, and see a snapshot of RAM:
+
+ make
+ 
+ make flash
+ 
+ make dumpram
+ 
 
 ## Device
 CH32V003J4M6(SOP8)
