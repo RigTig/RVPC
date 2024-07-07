@@ -8,12 +8,11 @@ Requires:
 
 To build, burn into RVPC, and see a snapshot of RAM:
 
+```
  make
- 
  make flash
- 
  make dumpram
- 
+ ```
 
 ## Device
 CH32V003J4M6(SOP8)
