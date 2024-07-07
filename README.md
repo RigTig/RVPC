@@ -39,7 +39,7 @@ Lots of considerations and options to consider.
 ### test1
 #### Using DMA
 There's no bit-masking in DMA transfer, and a byte is the minimum-sized chunk. So, we have to hit the whole port. Now, PC1=HSync and PC2=video, so can set/clear both bits with every DMA transfer. Port PC also has our audio line, but we'll choose to ignore it for the time being, and see how far we get with VGA.
-So, how many bytes needed for a whole scan line? Time for a whole scan line is about 31.770uS. Maybe DMA is per cycle, so clocks per whole scan line is 48*10^6*31.77*10^-6 = 1524.96, say 1525. So need 1525 bytes, which must be consecutive and some need to change every active scan line (by an asynchronous process), so must be in RAM.
+So, how many bytes needed for a whole scan line? Time for a whole scan line is about 31.770uS. Maybe DMA is per cycle, so clocks per whole scan line is 48\*10^6\*31.77\*10^-6 = 1524.96, say 1525. So need 1525 bytes, which must be consecutive and some need to change every active scan line (by an asynchronous process), so must be in RAM.
 #### pseudocode
  * initialise memory for DMA to drive port PC, called PCBYTES
  * Default all bytes in PCBYTES to 0b010 (HSync=PC1 hi, video=PC2 lo)
